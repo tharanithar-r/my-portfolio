@@ -1,26 +1,306 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 
+@theme {
+  /* Light theme - default */
+  --color-bg-primary: rgb(244, 245, 246);
+  --color-bg-secondary: rgb(255, 255, 255);
+  --color-text-primary: rgb(31, 31, 31);
+  --color-text-secondary: rgb(138, 148, 158);
+  --color-text-muted: rgb(107, 118, 128);
+  --color-accent: rgb(0, 0, 238);
+  --color-border: rgb(34, 34, 34);
+  --color-card-bg-alt: rgb(238, 240, 241);
+  --font-display: "DM Sans", sans-serif;
+}
+
+/* Dark theme overrides */
+.dark-mode {
+  /* BentoX Exact Colors from Puppeteer Analysis */
+  --color-bg-primary: rgb(9, 9, 9); /* Exact BentoX background */
+  --color-bg-secondary: rgb(20, 20, 20); /* Exact BentoX card background */
+  --color-text-primary: rgb(255, 255, 255);
+  --color-text-secondary: rgb(138, 148, 158);
+  --color-text-muted: rgb(170, 170, 170);
+  --color-accent: rgb(0, 0, 238);
+  --color-border: rgb(34, 34, 34);
+  --color-card-bg-alt: rgb(25, 25, 25); /* Slightly lighter for hover */
+}
+
+/* BentoX Color Palette */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Light Theme */
+  --background: rgb(244, 245, 246);
+  --card-background: rgb(255, 255, 255);
+  --text-primary: rgb(31, 31, 31);
+  --text-secondary: rgb(138, 148, 158);
+  --text-muted: rgb(107, 118, 128);
+  --accent: rgb(0, 0, 238);
+  --border: rgb(34, 34, 34);
+  --card-bg-alt: rgb(238, 240, 241);
+  --color-text-heading: rgb(102, 102, 102);
+  --color-text-content: rgb(204, 204, 204);
+
+  /* Typography System */
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 15px;
+  --text-lg: 18px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+
+  /* Spacing */
+  --gap-sm: 12px;
+  --gap-md: 16px;
+  --gap-lg: 24px;
+
+  /* Border Radius - BentoX Specifications */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+
+  /* BentoX Layout Dimensions */
+  --container-max: 1185px;
+  --container-padding: 32px;
+  --grid-gap: 16px;
+  --mobile-container: 360px;
+  --mobile-padding: 20px;
+  --mobile-gap: 12px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Performance Optimizations */
+.bentox-card {
+  contain: layout style paint;
+  transform: translateZ(0); /* Force hardware acceleration */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.border-custom {
+  border-color: var(--color-border);
+}
+
+/* Project image zoom */
+.project-image {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.08);
+}
+
+/* Advanced Micro-interactions */
+.copy-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.copy-button::after {
+  content: "Copied!";
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.copy-button.copied::after {
+  top: -30px;
+  opacity: 1;
+}
+
+/* Floating elements fade in */
+.floating-social {
+  opacity: 0;
+  animation: fadeInDown 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
+/* Skeleton loading for cards */
+.card-skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.1) 25%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.1) 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Arrow icon animations */
+.arrow-icon {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover .arrow-icon {
+  transform: translate(4px, -4px);
+}
+
+/* Tool icons hover */
+.tool-icon {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tool-icon:hover {
+  transform: translateY(-2px) rotate(5deg);
+  filter: brightness(1.2);
+}
+
+.dark-mode {
+  /* BentoX Dark Theme - Exact Analysis Match */
+  --background: rgb(9, 9, 9); /* Exact BentoX background */
+  --card-background: rgb(20, 20, 20); /* Exact BentoX card background */
+  --text-primary: rgb(255, 255, 255);
+  --text-secondary: rgb(138, 148, 158);
+  --color-text-heading: rgb(102, 102, 102);
+  --color-text-content: rgb(204, 204, 204);
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "DM Sans", "DM Sans Placeholder", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* BentoX Card System - Exact Analysis Implementation */
+.bentox-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 32px; /* Desktop: 32px (BentoX analysis) */
+  border-color: var(--color-border);
+  will-change: transform, box-shadow;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: cardSlideIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Mobile border radius override */
+@media (max-width: 768px) {
+  .bentox-card {
+    border-radius: 24px; /* Mobile: 24px (BentoX analysis) */
+  }
+}
+
+.bentox-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Staggered card animations on load */
+.bentox-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.bentox-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.bentox-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.bentox-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.bentox-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.bentox-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+@keyframes cardSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Legacy card support */
+.card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Link Animations */
+.link {
+  transition: color 0.2s cubic-bezier(0, 0, 1, 1);
+}
+
+.link:hover {
+  color: var(--accent);
+}
+
+/* Theme toggle animation */
+.theme-toggle {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-toggle:hover {
+  transform: rotate(180deg) scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Remove old responsive layout - using Tailwind classes instead */
+
+/* Mobile touch interactions */
+@media (hover: none) {
+  .card:hover,
+  .bentox-card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  .card:active,
+  .bentox-card:active {
+    transform: scale(0.98) !important;
+  }
+}
+
+/* Horizontal scrolling animation for tech stack */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 10s linear infinite;
 }
