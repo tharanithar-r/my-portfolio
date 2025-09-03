@@ -9,8 +9,8 @@ export const StructuredData = () => {
     name: "Tharanithar R",
     alternateName: "Tharanithar",
     description: "Full Stack Developer and IIITK alumni specializing in React, Next.js, TypeScript, and modern web applications",
-    url: "https://tharanithar.dev",
-    image: "https://tharanithar.dev/images/profile.jpg",
+    url: "https://tharanithar-r.dev",
+    image: "https://tharanithar-r.dev/images/profile.jpg",
     sameAs: [
       "https://github.com/Tharanithar",
       "https://linkedin.com/in/tharanithar",
@@ -65,14 +65,14 @@ export const StructuredData = () => {
   const portfolioSchema = {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
-    "@id": "https://tharanithar.dev",
+    "@id": "https://tharanithar-r.dev",
     name: "Tharanithar Portfolio",
     description: "Portfolio website showcasing full stack development projects and technical expertise",
-    url: "https://tharanithar.dev",
+    url: "https://tharanithar-r.dev",
     author: {
       "@type": "Person",
       name: "Tharanithar R",
-      url: "https://tharanithar.dev"
+      url: "https://tharanithar-r.dev"
     },
     creator: {
       "@type": "Person",
@@ -99,8 +99,8 @@ export const StructuredData = () => {
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": "https://tharanithar.dev/#website",
-    url: "https://tharanithar.dev",
+    "@id": "https://tharanithar-r.dev/#website",
+    url: "https://tharanithar-r.dev",
     name: "Tharanithar Portfolio",
     description: "Full Stack Developer Portfolio - Tharanithar R",
     publisher: {
@@ -111,7 +111,7 @@ export const StructuredData = () => {
       "@type": "SearchAction",
       target: {
         "@type": "EntryPoint",
-        urlTemplate: "https://tharanithar.dev/projects?search={search_term_string}"
+        urlTemplate: "https://tharanithar-r.dev/projects?search={search_term_string}"
       },
       "query-input": "required name=search_term_string"
     }
@@ -125,13 +125,13 @@ export const StructuredData = () => {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://tharanithar.dev"
+        item: "https://tharanithar-r.dev"
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Projects",
-        item: "https://tharanithar.dev/projects"
+        item: "https://tharanithar-r.dev/projects"
       }
     ]
   };

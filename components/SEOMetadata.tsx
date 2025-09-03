@@ -7,7 +7,7 @@ interface SEOMetadataProps {
 }
 
 export function generateMetadata({ project, page = 'home' }: SEOMetadataProps): Metadata {
-  const baseUrl = 'https://tharanithar.dev'
+  const baseUrl = 'https://tharanithar-r.dev'
   
   if (page === 'project-detail' && project) {
     return {

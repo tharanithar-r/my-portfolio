@@ -3,7 +3,8 @@ import "./globals.css";
 import { StructuredData } from "@/components/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Tharanithar - Full Stack Developer | IIITK Alumni | React & Next.js Expert",
+  title:
+    "Tharanithar - Full Stack Developer | IIITK Alumni | React & Next.js Expert",
   description:
     "Tharanithar R - Full Stack Developer and IIITK alumni specializing in React, Next.js, TypeScript, and modern web applications. Portfolio showcasing innovative projects and technical expertise.",
   keywords: [
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     "Portfolio",
     "JavaScript Developer",
   ],
-  authors: [{ name: "Tharanithar R", url: "https://tharanithar.dev" }],
+  authors: [{ name: "Tharanithar R", url: "https://tharanithar-r.dev" }],
   creator: "Tharanithar R",
   publisher: "Tharanithar R",
   formatDetection: {
@@ -32,15 +33,15 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://tharanithar.dev"),
+  metadataBase: new URL("https://tharanithar-r.dev"),
   alternates: {
-    canonical: "https://tharanithar.dev",
+    canonical: "https://tharanithar-r.dev",
   },
   openGraph: {
-    title: "Tharanithar - Full Stack Developer | IIITK Alumni",
+    title: "Tharanithar R - Full-Stack Developer",
     description:
       "Tharanithar R - Full Stack Developer and IIITK alumni. Explore my portfolio featuring innovative web applications built with React, Next.js, and modern technologies.",
-    url: "https://tharanithar.dev",
+    url: "https://tharanithar-r.dev",
     siteName: "Tharanithar Portfolio",
     type: "profile",
     locale: "en_US",
