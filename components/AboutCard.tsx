@@ -1,25 +1,47 @@
-'use client';
+"use client";
 
-import { Card } from './ui/Card';
-import { Button } from './ui/Button';
-import { ArrowUpRight } from 'lucide-react';
+import { useRouter } from "next/navigation";
+import { Card } from "./ui/Card";
+import { Button } from "./ui/Button";
+import { ArrowUpRight } from "lucide-react";
 
 export const AboutCard = () => {
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push("/about");
+  };
+
   return (
-    <Card variant="about" className="flex flex-col justify-center w-full h-full bg-bg-secondary relative p-8 border border-custom">
-      <div className="space-y-3">
-        <p className="text-xs font-medium text-[var(--color-text-heading)] uppercase tracking-wide">
-          ABOUT
-        </p>
-        <h2 className="text-lg font-medium text-[var(--color-text-content)] leading-relaxed">
-          Passionate about design and enjoy solving problems.
-        </h2>
-      </div>
-      
-      <div className="absolute bottom-6 right-6">
-        <Button variant="arrow" className="text-text-secondary hover:text-text-primary w-8 h-8 rounded-full border border-text-secondary/20">
-          <ArrowUpRight className="w-4 h-4" />
-        </Button>
+    <Card
+      variant='about'
+      className='group cursor-pointer hover:bg-card-bg-alt transition-colors p-8'
+      onClick={handleClick}
+    >
+      <div className='flex flex-col justify-between h-full'>
+        <div>
+          <h2 className='caption-text font-semibold text-text-secondary uppercase tracking-wide mb-6'>
+            ABOUT
+          </h2>
+          <p className='body-text text-text-primary max-w-[260px]'>
+            Love to build products and enjoy solving problems.
+          </p>
+        </div>
+        <div className='flex justify-end mt-5'>
+          <Button
+            variant='ghost'
+            size='sm'
+            className='p-2 hover:bg-bg-secondary transition-colors'
+            onClick={(e) => {
+              e.stopPropagation();
+              handleClick();
+            }}
+          >
+            <div className='w-8 h-8 rounded-full border border-custom flex items-center justify-center hover:bg-accent transition-all'>
+              <ArrowUpRight className='w-4 h-4 text-text-secondary group-hover:text-text-primary transition-colors' />
+            </div>
+          </Button>
+        </div>
       </div>
     </Card>
   );

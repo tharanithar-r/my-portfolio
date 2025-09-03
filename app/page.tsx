@@ -10,16 +10,17 @@ import { ContactCard } from "@/components/ContactCard";
 import { SocialLinks } from "@/components/SocialLinks";
 import { getFeaturedProjects } from "@/lib/projects";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
+import { ResumeCard } from "@/components/ResumeCard";
 
 export default function Home() {
   const featuredProjects = getFeaturedProjects().slice(0, 3);
 
   return (
-    <div className='min-h-screen font-display'>
+    <main className='min-h-screen font-display' role='main'>
       {/* Desktop Layout - BentoX Reference Grid Exact Match */}
       <div className='hidden lg:block w-full h-screen overflow-hidden p-4'>
         {/* Main Container - Adjusted proportions matching reference design */}
-        <div className='w-full h-full grid grid-cols-5 grid-rows-3 gap-4'>
+        <div className='w-full h-full grid grid-cols-5 grid-rows-[1fr_1fr_1fr] gap-4'>
           {/* Row 1 */}
           <div className='col-span-2'>
             <HeroCard />
@@ -45,29 +46,11 @@ export default function Home() {
             <ProjectCard project={featuredProjects[2]} />
           </div>
           <div>
-            {/* Resource Card */}
-            <div className='bg-bg-secondary rounded-[32px] p-6 h-full flex flex-col justify-between border border-custom'>
-              <div>
-                <p className='text-xs font-medium text-[var(--color-text-heading)] uppercase tracking-wide mb-2'>
-                  RESOURCES
-                </p>
-                <h3 className='text-base font-medium text-[var(--color-text-content)] leading-tight'>
-                  Resources to speed up your workflow
-                </h3>
-              </div>
-              <div className='flex justify-end'>
-                <button className='w-8 h-8 rounded-full border border-custom flex items-center justify-center hover:bg-card-bg-alt transition-all'>
-                  <span className='text-sm'>→</span>
-                </button>
-              </div>
-            </div>
+            <ResumeCard />
           </div>
 
           {/* Row 3 */}
           <div className='col-span-2'>
-            <MyProjectsCard />
-          </div>
-          <div>
             <TechStackCard />
           </div>
           <div>
@@ -76,61 +59,72 @@ export default function Home() {
             </div>
           </div>
           <div>
+            <MyProjectsCard />
+          </div>
+          <div>
             <ContactCard />
           </div>
         </div>
       </div>
 
-      {/* Mobile Layout - Fixed BentoX Mobile Stack */}
-      <div className='block lg:hidden w-full min-h-screen bg-bg-primary py-5'>
-        <div className='flex flex-col gap-4 w-full px-5 max-w-sm mx-auto'>
+      {/* Mobile Layout - BentoX Reference Design */}
+      <div className='block lg:hidden w-full min-h-screen p-3'>
+        <div className='flex flex-col gap-4 w-full mx-auto'>
           {/* Hero Card */}
-          <HeroCard />
+          <div className='h-[220px]'>
+            <HeroCard />
+          </div>
+
+          {/* About Card - Right after Hero */}
+          <div className='h-[220px]'>
+            <AboutCard />
+          </div>
 
           {/* Profile Card */}
-          <ProfileCard />
+          <div className='h-[220px]'>
+            <ProfileCard />
+          </div>
 
-          {/* About Card */}
-          <AboutCard />
+          {/* Tech Stack + Theme Toggle Row */}
+          <div className='flex gap-4 w-full h-[220px]'>
+            <div className='w-3/5'>
+              <ResumeCard />
+            </div>
+            <div className='w-2/5 h-full'>
+              <div className='bg-bg-secondary rounded-[24px] h-full flex items-center justify-center border border-custom'>
+                <ThemeToggle />
+              </div>
+            </div>
+          </div>
 
-          {/* Project Cards */}
+          {/* Project Cards - Three consecutive cards */}
           {featuredProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+            <div key={project.id} className='h-[220px]'>
+              <ProjectCard project={project} />
+            </div>
           ))}
 
-          {/* Tools Section */}
-          <TechStackCard />
-
-          {/* Resources Card */}
-          <div className='bg-bg-secondary rounded-[24px] p-6 h-[200px] flex flex-col justify-between transition-all active:scale-[0.98] border border-custom'>
-            <div>
-              <p className='text-xs font-medium text-[var(--color-text-heading)] uppercase tracking-wide mb-2'>
-                RESOURCES
-              </p>
-              <h3 className='text-base font-medium text-[var(--color-text-content)] leading-tight'>
-                Resources to speed your workflow
-              </h3>
-            </div>
-            <div className='flex justify-end'>
-              <button className='w-8 h-8 rounded-full border border-custom flex items-center justify-center hover:bg-card-bg-alt transition-all'>
-                <span className='text-sm'>→</span>
-              </button>
-            </div>
+          {/* My Projects Card - Newsletter equivalent */}
+          <div className='h-[220px]'>
+            <MyProjectsCard />
           </div>
 
-          {/* Newsletter Card */}
-          <MyProjectsCard />
+          {/* GitHub Stats Card - Resources */}
+          <div className='h-[220px]'>
+            <div className='h-full'>
+              <TechStackCard />
+            </div>{" "}
+          </div>
 
           {/* Contact Card */}
-          <ContactCard />
-
-          {/* Mobile Theme Toggle & Social */}
-          <div className='flex justify-between items-center mt-4 w-full'>
-            <SocialLinks />
-            <ThemeToggle />
+          <div className='h-[250px]'>
+            <ContactCard />
           </div>
+
+          {/* Social Links - Desktop style for mobile */}
+          <SocialLinks />
         </div>
       </div>
-    </div>
+    </main>
   );
 }
