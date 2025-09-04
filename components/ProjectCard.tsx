@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { Card } from "./ui/Card";
 import { Project } from "@/lib/projects";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 
 interface ProjectCardProps {
@@ -33,16 +33,18 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
           priority={false}
         />
         {/* Dark overlay on hover */}
-        <div className='absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
+        <div className='absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
+      </div>
+
+      {/* Arrow Icon - Bottom right corner with shadow */}
+      <div className='absolute bottom-4 right-4 w-8 h-8 rounded-full border border-black dark:border-white flex items-center justify-center hover:bg-accent transition-all z-20 shadow-lg'>
+        <ArrowUpRight className='w-4 h-4 text-black dark:text-white  group-hover:text-white transition-colors' />
       </div>
 
       {/* Project Info Overlay - Bottom positioned on hover */}
       <div className='absolute bottom-0 left-0 right-0 p-6 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
         <div className='flex items-end justify-between'>
           <h3 className='heading-secondary text-white'>{project.title}</h3>
-          <div className='w-6 h-6 flex items-center justify-center' aria-label='View project details'>
-            <ArrowRight className='text-white' />
-          </div>
         </div>
       </div>
     </Card>
