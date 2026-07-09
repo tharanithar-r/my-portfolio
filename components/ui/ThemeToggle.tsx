@@ -9,9 +9,16 @@ export const ThemeToggle = () => {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
     const currentTheme = initTheme();
-    setTheme(currentTheme as "light" | "dark");
+
+    const frameId = window.requestAnimationFrame(() => {
+      setMounted(true);
+      setTheme(currentTheme as "light" | "dark");
+    });
+
+    return () => {
+      window.cancelAnimationFrame(frameId);
+    };
   }, []);
 
   const handleToggle = () => {

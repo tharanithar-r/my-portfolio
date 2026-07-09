@@ -1,9 +1,9 @@
 "use client";
 
 import { useParams, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { X } from "lucide-react";
-import { getProjectById, Project } from "@/lib/projects";
+import { getProjectById } from "@/lib/projects";
 import { ProjectHeader } from "@/components/project/ProjectHeader";
 import { ProjectInfo } from "@/components/project/ProjectInfo";
 import { ProjectHeroImage } from "@/components/project/ProjectHeroImage";
@@ -15,21 +15,8 @@ import { ProjectKeyFeatures } from "@/components/project/ProjectKeyFeatures";
 export default function ProjectDetailPage() {
   const params = useParams();
   const router = useRouter();
-  const [project, setProject] = useState<Project | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const projectId = params.id as string;
-    const foundProject = getProjectById(projectId);
-
-    if (foundProject) {
-      setProject(foundProject);
-    }
-
-    setLoading(false);
-  }, [params.id]);
-
-  console.log(project);
+  const projectId = Array.isArray(params.id) ? params.id[0] : params.id;
+  const project = projectId ? getProjectById(projectId) : undefined;
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -47,14 +34,6 @@ export default function ProjectDetailPage() {
   const handleClose = () => {
     router.back();
   };
-
-  if (loading) {
-    return (
-      <div className='min-h-screen bg-background flex items-center justify-center'>
-        <div className='animate-spin rounded-full h-8 w-8 border-b-2 border-text-primary'></div>
-      </div>
-    );
-  }
 
   if (!project) {
     return (
