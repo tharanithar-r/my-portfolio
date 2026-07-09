@@ -29,6 +29,6 @@ export const copyToClipboard = async (text: string): Promise<boolean> => {
 
 // Download resume utility
 export const downloadResume = () => {
-  const resumeUrl = 'https://drive.google.com/file/d/1rguV7Hl7Ggjtiy22pwiJTyBDGgbE8pPb/view?usp=drivesdk';
+  const resumeUrl = 'https://drive.google.com/file/d/1nL3c2eQq_Y6sOrbhTiAHMENrgFdHileK/view?usp=sharing';
   window.open(resumeUrl, '_blank');
 };

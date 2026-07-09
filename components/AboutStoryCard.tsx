@@ -16,19 +16,19 @@ export const AboutStoryCard = () => {
             I&apos;m a passionate Full Stack Developer from India. Since
             discovering programming during my studies at IIIT Kottayam,
             I&apos;ve been fascinated by the power of code to solve real-world
-            problems. I love to build products that make a difference. What
-            started as curiosity about web technologies has evolved into
-            expertise in creating complete digital solutions that serve actual
-            business needs.
+            problems. I build complete digital systems across frontend,
+            backend, databases, automation, and deployment.
           </p>
           <div className='pt-4'>
             <h2 className='caption-text font-semibold text-text-primary mb-2'>
-              MY STORY
+              WHAT I DO NOW
             </h2>
             <p className='body-text'>
-              Today I&apos;m a Full Stack Developer, building scalable web
-              applications that bridge the gap between user needs and business
-              objectives.
+              Today I&apos;m a Full Stack Developer at{" "}
+              <span className='underline underline-offset-4 decoration-text-secondary'>
+                HireZapp
+              </span>
+              , an AI recruitment platform backed by AWS and NVIDIA.
             </p>
           </div>
         </div>

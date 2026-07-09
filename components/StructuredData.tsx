@@ -8,18 +8,18 @@ export const StructuredData = () => {
     "@type": "Person",
     name: "Tharanithar R",
     alternateName: "Tharanithar",
-    description: "Full Stack Developer and IIITK alumni specializing in React, Next.js, TypeScript, and modern web applications",
+    description: "Full Stack Developer at HireZapp specializing in React, Next.js, TypeScript, Node.js, automation, and modern web applications",
     url: "https://tharanithar-r.dev",
     image: "https://tharanithar-r.dev/images/profile.jpg",
     sameAs: [
-      "https://github.com/Tharanithar",
-      "https://linkedin.com/in/tharanithar",
+      "https://github.com/tharanithar-r",
+      "https://linkedin.com/in/tharanithar-r",
       "https://twitter.com/Tharanitha82201"
     ],
     jobTitle: "Full Stack Developer",
     worksFor: {
       "@type": "Organization",
-      name: "Freelance"
+      name: "HireZapp"
     },
     alumniOf: {
       "@type": "EducationalOrganization",
@@ -32,16 +32,27 @@ export const StructuredData = () => {
       "Next.js",
       "TypeScript",
       "JavaScript",
+      "Python",
+      "SQL",
       "Node.js",
+      "Express.js",
       "Full Stack Development",
       "Web Development",
       "Software Engineering",
-      "ASP.NET",
-      "C#",
       "PostgreSQL",
-      "MSSQL",
+      "DynamoDB",
       "Prisma",
-      "Tailwind CSS"
+      "Tailwind CSS",
+      "n8n",
+      "AWS",
+      "VPS",
+      "Nginx",
+      "PM2",
+      "Git",
+      "MSSQL",
+      "C#",
+      "C++",
+      "ASP.NET"
     ],
     hasOccupation: {
       "@type": "Occupation",
@@ -54,9 +65,11 @@ export const StructuredData = () => {
         "React Development",
         "Next.js Development",
         "TypeScript Programming",
+        "Python Programming",
         "Full Stack Development",
         "Database Design",
         "API Development",
+        "Automation Workflows",
         "Responsive Web Design"
       ]
     }
@@ -88,7 +101,7 @@ export const StructuredData = () => {
       "Next.js",
       "TypeScript",
       "Web Development",
-      "IIITK Alumni"
+      "IIIT Kottayam"
     ],
     mainEntity: {
       "@type": "Person",

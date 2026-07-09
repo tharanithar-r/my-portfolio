@@ -11,7 +11,10 @@ export const HeroCard = () => {
           Hi, I&apos;m Tharanithar ⎯
         </h1>
         <p className='body-text text-[var(--color-text-heading)]'>
-          Full Stack Developer || IIITK CSE Learner
+          Full Stack Developer, currently working at{" "}
+          <span className='underline underline-offset-4 decoration-text-secondary'>
+            HireZapp
+          </span>
         </p>
       </div>
     </Card>

@@ -4,20 +4,26 @@ import { StructuredData } from "@/components/StructuredData";
 
 export const metadata: Metadata = {
   title:
-    "Tharanithar - Full Stack Developer | IIITK Alumni | React & Next.js Expert",
+    "Tharanithar - Full Stack Developer at HireZapp | React & Next.js",
   description:
-    "Tharanithar R - Full Stack Developer and IIITK alumni specializing in React, Next.js, TypeScript, and modern web applications. Portfolio showcasing innovative projects and technical expertise.",
+    "Tharanithar R - Full Stack Developer at HireZapp specializing in React, Next.js, TypeScript, Node.js, automation workflows, and modern web applications.",
   keywords: [
     "Tharanithar",
     "Tharanithar R",
     "Tharanithar full stack developer",
     "Tharanithar IIITK",
-    "IIITK alumni",
+    "IIIT Kottayam",
+    "HireZapp",
     "Full Stack Developer",
     "React Developer",
     "Next.js Developer",
     "TypeScript",
+    "Python",
     "Node.js",
+    "Express.js",
+    "AWS",
+    "DynamoDB",
+    "n8n",
     "Web Development",
     "IIITK",
     "Computer Science",
@@ -40,7 +46,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Tharanithar R - Full-Stack Developer",
     description:
-      "Tharanithar R - Full Stack Developer and IIITK alumni. Explore my portfolio featuring innovative web applications built with React, Next.js, and modern technologies.",
+      "Tharanithar R - Full Stack Developer at HireZapp. Explore my portfolio featuring web applications, automation workflows, and full-stack systems.",
     url: "https://tharanithar-r.dev",
     siteName: "Tharanithar Portfolio",
     type: "profile",
@@ -56,9 +62,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tharanithar - Full Stack Developer | IIITK Alumni",
+    title: "Tharanithar - Full Stack Developer at HireZapp",
     description:
-      "Full Stack Developer and IIITK alumni specializing in React, Next.js, and modern web technologies. Check out my portfolio!",
+      "Full Stack Developer specializing in React, Next.js, Node.js, automation workflows, and modern web technologies. Check out my portfolio!",
     creator: "@Tharanitha82201",
     images: ["/images/twitter-card.jpg"],
   },

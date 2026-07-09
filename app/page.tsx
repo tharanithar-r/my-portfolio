@@ -16,9 +16,12 @@ export default function Home() {
   const featuredProjects = getFeaturedProjects().slice(0, 3);
 
   return (
-    <main className='min-h-screen font-display' role='main'>
+    <main
+      className='min-h-screen lg:h-[calc(100dvh-2rem-4px)] lg:min-h-0 lg:overflow-hidden font-display'
+      role='main'
+    >
       {/* Desktop Layout - BentoX Reference Grid Exact Match */}
-      <div className='hidden lg:block w-full h-screen overflow-hidden p-4'>
+      <div className='hidden lg:block w-full h-full overflow-hidden p-4'>
         {/* Main Container - Adjusted proportions matching reference design */}
         <div className='w-full h-full grid grid-cols-5 grid-rows-[1fr_1fr_1fr] gap-4'>
           {/* Row 1 */}

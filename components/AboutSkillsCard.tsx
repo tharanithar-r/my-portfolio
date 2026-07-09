@@ -7,22 +7,22 @@ const skills = [
   {
     title: "Full Stack Development",
     description:
-      "Building end-to-end web applications using modern technologies like Next.js, React, Node.js, and ASP.NET, delivering complete solutions from database design to user interface.",
+      "Building end-to-end applications with TypeScript, Python, Next.js, React, Node.js, Express.js, and production-ready backend systems.",
   },
   {
-    title: "API Development & Integration",
+    title: "Product Engineering",
     description:
-      "Creating secure, scalable RESTful APIs with proper authentication systems, database optimization, and third-party integrations like payment gateways for seamless user experiences.",
+      "Turning product requirements into reliable features with clean interfaces, practical workflows, and maintainable application architecture.",
   },
   {
     title: "Database Architecture",
     description:
-      "Designing and implementing efficient database solutions across PostgreSQL, MSSQL, and MongoDB, with expertise in ORM tools like Prisma for type-safe data operations.",
+      "Designing efficient data models and access patterns across PostgreSQL, SQL, DynamoDB, MSSQL, and Prisma-backed applications.",
   },
   {
     title: "Cloud Deployment",
     description:
-      "Managing application deployments across various platforms including AWS, Vercel, and VPS servers, with containerization using Docker and process management for 99% uptime reliability.",
+      "Managing production deployments with AWS, VPS infrastructure, Nginx, PM2, Git, and multi-environment release workflows, with additional experience in C#, C++, and ASP.NET.",
   },
 ];
 

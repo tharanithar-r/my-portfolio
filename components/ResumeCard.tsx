@@ -3,10 +3,12 @@
 import { Card } from "./ui/Card";
 import { Button } from "./ui/Button";
 
+//old : https://drive.google.com/file/d/1SyoOej8HDBCv6RH453BtvFx_aKZjPTub/view?usp=sharing
+
 export const ResumeCard = () => {
   const handleDownload = () => {
     window.open(
-      "https://drive.google.com/file/d/1SyoOej8HDBCv6RH453BtvFx_aKZjPTub/view?usp=sharing",
+      "https://drive.google.com/file/d/1nL3c2eQq_Y6sOrbhTiAHMENrgFdHileK/view?usp=sharing",
       "_blank"
     );
   };

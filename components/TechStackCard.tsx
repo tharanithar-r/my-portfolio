@@ -8,11 +8,16 @@ const techStack = [
   { name: "React", icon: "/icons/react.svg" },
   { name: "Next.js", icon: "/icons/nextjs.svg" },
   { name: "TypeScript", icon: "/icons/typescript.svg" },
+  { name: "Python", icon: "/icons/python.svg" },
+  { name: "Node.js", icon: "/icons/nodejs.svg" },
+  { name: "AWS", icon: "/icons/aws.svg" },
   { name: "PostgreSQL", icon: "/icons/postgresql.svg" },
   { name: "Redux", icon: "/icons/redux.svg" },
   { name: "Tailwind CSS", icon: "/icons/tailwindcss-icon.svg" },
   { name: "Prisma", icon: "/icons/prisma.svg" },
-  { name: "Node.js", icon: "/icons/nodejs.svg" },
+  { name: "n8n", icon: "/icons/n8n.svg" },
+  { name: "C#", icon: "/icons/csharp.svg" },
+  { name: ".NET", icon: "/icons/dotnet.svg" },
 ];
 
 const TechIcon = ({ name, icon }: { name: string; icon: string }) => {
